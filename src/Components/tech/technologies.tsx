@@ -35,7 +35,7 @@ const Technologies = ({ techPromise }: TechnologiesProps) => {
           />
         </div>
 
-        <div className="lg:col-span-1 bg-white border border-gray-200 rounded-2xl p-5 sticky top-24 shadow-xs">
+        <div className="lg:col-span-1 bg-white border border-gray-200 rounded-2xl p-5 sticky top-24 shadow-xs mt-25">
           <SelectedTechs
             selectedTechs={selectedTechs}
             setSelectedTechs={setSelectedTechs}
