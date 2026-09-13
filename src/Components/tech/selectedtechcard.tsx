@@ -37,7 +37,7 @@ const SelectedTechCard = ({
           <h3 className="text-xs font-bold text-gray-900 truncate">
             {tech.name}
           </h3>
-          <p className="text-[11px] text-gray-400">
+          <p className="text-[12px] text-gray-400">
             {tech.category}
           </p>
         </div>
@@ -47,7 +47,7 @@ const SelectedTechCard = ({
         className="text-gray-400 hover:text-red-500 p-1 rounded-md transition-colors cursor-pointer"
         title="Remove"
       >
-        <TbTrash size={16} />
+        <TbTrash size={18} />
       </button>
     </div>
   );

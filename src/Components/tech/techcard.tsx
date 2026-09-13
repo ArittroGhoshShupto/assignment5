@@ -25,7 +25,7 @@ const TechCard = ({
 
     toast.success(`${tech.name} added to your stack!`, {
       position: "top-center",
-      autoClose: 2500,
+      autoClose: 2550,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
