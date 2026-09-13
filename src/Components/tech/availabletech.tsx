@@ -14,7 +14,7 @@ const AvailableTechs = ({
   setSelectedTechs,
 }: IAvailableTechsProps) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
       {techs.map((tech) => (
         <TechCard
           key={tech.id}
@@ -27,4 +27,4 @@ const AvailableTechs = ({
   );
 };
 
-export default AvailableTechs
+export default AvailableTechs;

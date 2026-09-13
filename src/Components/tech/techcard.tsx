@@ -15,18 +15,17 @@ const TechCard = ({
 }: ITechCardProps) => {
 
   const isSelected = selectedTechs.some(
-    (t) => t.name === tech.name
+    (t) => t.id === tech.id || t.name === tech.name
   );
 
   const handleSelectTech = () => {
-
     if (isSelected) return;
 
     setSelectedTechs([...selectedTechs, tech]);
 
     toast.success(`${tech.name} added to your stack!`, {
       position: "top-center",
-      autoClose: 3000,
+      autoClose: 2500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -37,76 +36,57 @@ const TechCard = ({
   };
 
   return (
-    <div className="border border-gray-200 rounded-2xl bg-white p-5 min-h-62 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
-
-      {/* Card Top */}
+    <div className="border border-gray-200 rounded-2xl bg-white p-5 flex flex-col justify-between hover:shadow-md transition-shadow duration-300">
       <div>
-
-        {/* Logo + Badge */}
-        <div className="flex items-start justify-between mb-5">
-
-          <div className="h-11 w-11 flex items-center justify-center">
+        <div className="flex items-start justify-between mb-4">
+          <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-gray-50 border border-gray-100">
             <img
               src={tech.icon}
               alt={tech.name}
-              className="h-9 w-9 object-contain"
+              className="h-7 w-7 object-contain"
             />
           </div>
 
-          <span className="text-xs font-medium px-3 py-1 rounded-full bg-purple-50 text-purple-600">
+          <span className="text-xs font-semibold px-2.5 py-1 rounded-md text-blue-600 bg-blue-50">
             {tech.badge}
           </span>
-
         </div>
 
-        {/* Name */}
-        <h3 className="text-lg font-bold text-gray-900 mb-2">
+        <h3 className="text-base font-bold text-gray-900 mb-1">
           {tech.name}
         </h3>
 
-        {/* Description */}
-        <p className="text-xs leading-5 text-gray-500">
+        <p className="text-xs leading-5 text-gray-500 line-clamp-3 min-h-12">
           {tech.description}
         </p>
-
       </div>
 
-      {/* Bottom */}
       <div className="mt-5">
-
-        {/* Category / Difficulty / Rating */}
-        <div className="flex items-center gap-3 text-xs text-gray-500 mb-4">
-
-          <span>
+        <div className="flex items-center gap-2 text-xs text-gray-500 mb-4 pt-3 border-t border-gray-100">
+          <span className="px-2 py-0.5 rounded bg-gray-100 font-medium text-gray-700">
             {tech.category}
           </span>
-
-          <span>
+          <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-600">
             {tech.difficulty}
           </span>
-
-          <span className="flex items-center gap-1">
-            <span className="text-yellow-500">★</span>
+          <span className="flex items-center gap-1 font-semibold text-amber-500 ml-auto">
+            <span>★</span>
             {tech.rating}
           </span>
-
         </div>
 
-        {/* Button */}
         <button
           onClick={handleSelectTech}
           disabled={isSelected}
-          className={`w-full py-2.5 rounded-lg text-sm font-medium transition-all ${
+          className={`w-full py-2.5 rounded-xl text-xs font-semibold transition-all ${
             isSelected
               ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-              : "bg-black text-white hover:bg-gray-800 cursor-pointer"
+              : "bg-black text-white hover:bg-gray-800 cursor-pointer shadow-xs"
           }`}
         >
-          {isSelected ? "Added" : "Add to Stack"}
+          {isSelected ? "✓ Added to Stack" : "Add to Stack"}
         </button>
-
       </div>
-
     </div>
   );
 };
