@@ -6,60 +6,43 @@ import SelectedTechs from "./selectedtech";
 interface TechnologiesProps {
   techPromise: Promise<ITech[]>;
 }
+
 const Technologies = ({ techPromise }: TechnologiesProps) => {
   const techs = use(techPromise);
-  const [buttonType, setButtonType] = useState<"available" | "selected">("available");
   const [selectedTechs, setSelectedTechs] = useState<ITech[]>([]);
 
-  const handleUpdateButtonType = (type: "available" | "selected") => {
-    setButtonType(type);
-  };
   return (
-    <div className="container mx-auto px-4 my-10">
-      <div className="flex justify-between items-center gap-4 mb-8">
-        <h2 className="font-bold text-3xl text-gray-900">
-          {buttonType === "available"
-            ? "Explore the Technologies"
-            : `Your Stack (${selectedTechs.length})`}
-        </h2>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-10">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+        <div className="lg:col-span-3">
+          <div className="mb-8">
+            <h2 className="font-extrabold text-3xl sm:text-4xl text-gray-900">
+              Explore the{" "}
+              <span className="bg-linear-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent">
+                Technologies
+              </span>
+            </h2>
+            <p className="text-gray-400 text-sm mt-1">
+              Pick one technology per category to build your ideal stack.
+            </p>
+          </div>
 
-        <div className="join border border-gray-200 rounded-xl overflow-hidden bg-gray-50 p-1">
-          <button
-            onClick={() => handleUpdateButtonType("available")}
-            className={`btn btn-sm sm:btn-md join-item border-none rounded-lg ${
-              buttonType === "available"
-                ? "bg-purple-600 text-white hover:bg-purple-700 font-bold"
-                : "btn-ghost text-gray-600"
-            }`}
-          >
-            Available
-          </button>
-          <button
-            onClick={() => handleUpdateButtonType("selected")}
-            className={`btn btn-sm sm:btn-md join-item border-none rounded-lg ${
-              buttonType === "selected"
-                ? "bg-purple-600 text-white hover:bg-purple-700 font-bold"
-                : "btn-ghost text-gray-600"
-            }`}
-          >
-            Your Stack ({selectedTechs.length})
-          </button>
+          <AvailableTechs
+            techs={techs}
+            selectedTechs={selectedTechs}
+            setSelectedTechs={setSelectedTechs}
+          />
+        </div>
+
+        <div className="lg:col-span-1 bg-white border border-gray-200 rounded-2xl p-5 sticky top-24 shadow-xs">
+          <SelectedTechs
+            selectedTechs={selectedTechs}
+            setSelectedTechs={setSelectedTechs}
+          />
         </div>
       </div>
-
-      {buttonType === "available" ? (
-        <AvailableTechs
-          techs={techs}
-          selectedTechs={selectedTechs}
-          setSelectedTechs={setSelectedTechs}
-        />
-      ) : (
-        <SelectedTechs
-          selectedTechs={selectedTechs}
-          setSelectedTechs={setSelectedTechs}
-        />
-      )}
     </div>
   );
 };
+
 export default Technologies;
