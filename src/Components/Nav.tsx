@@ -24,7 +24,7 @@ const Nav = () => {
             Sign In
           </button>
 
-          <button className="bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 text-white px-4 md:px-5 py-2 rounded-full">
+          <button className="bg-brand-gradient text-white px-4 md:px-5 py-2 rounded-full">
             Sign Up
           </button>
         </div>

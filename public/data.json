@@ -1,5 +1,6 @@
 [
   {
+
     "id": "react",
     "name": "React",
     "category": "Frontend",
@@ -19,6 +20,7 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Versatile"
   },
+
   {
     "id": "nodejs",
     "name": "Node.js",
@@ -28,7 +30,9 @@
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Fast"
+
   },
+
   {
     "id": "express",
     "name": "Express.js",
@@ -39,6 +43,7 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Essential"
   },
+
   {
     "id": "postgresql",
     "name": "PostgreSQL",
@@ -48,8 +53,11 @@
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Top SQL"
+
   },
+
   {
+
     "id": "mongodb",
     "name": "MongoDB",
     "category": "Database",
@@ -58,8 +66,11 @@
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
     "badge": "Flexible"
+
   },
+
   {
+
     "id": "typescript",
     "name": "TypeScript",
     "category": "Language",
@@ -68,8 +79,11 @@
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Essential"
+
   },
+
   {
+
     "id": "javascript",
     "name": "JavaScript",
     "category": "Language",
@@ -78,8 +92,11 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Core"
+
   },
+
   {
+
     "id": "tailwind",
     "name": "Tailwind CSS",
     "category": "Styling",
@@ -88,8 +105,11 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Popular"
+
   },
+
   {
+
     "id": "docker",
     "name": "Docker",
     "category": "DevOps",
@@ -98,8 +118,11 @@
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Containers"
+
   },
+
   {
+
     "id": "git",
     "name": "Git",
     "category": "Tools",
@@ -108,8 +131,11 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Essential"
+
   },
+
   {
+
     "id": "github",
     "name": "GitHub",
     "category": "Tools",
@@ -118,5 +144,7 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Popular"
+
   }
+
 ]

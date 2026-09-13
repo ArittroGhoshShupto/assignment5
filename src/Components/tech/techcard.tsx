@@ -43,7 +43,7 @@ const TechCard = ({
             <img
               src={tech.icon}
               alt={tech.name}
-              className="h-7 w-7 object-contain"
+              className="h-6 w-6 object-contain"
             />
           </div>
 
