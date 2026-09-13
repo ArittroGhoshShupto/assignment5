@@ -47,7 +47,7 @@ const TechCard = ({
             />
           </div>
 
-          <span className="text-xs font-semibold px-2.5 py-1 rounded-md text-blue-600 bg-blue-50">
+          <span className="text-xs font-semibold px-2.5 py-1 rounded-md text-violet-600 bg-blue-50">
             {tech.badge}
           </span>
         </div>
