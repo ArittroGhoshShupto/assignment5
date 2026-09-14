@@ -9,14 +9,14 @@ const Nav = () => {
           ☰
         </button>
 
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="DevStack" />
 
         <ul className="hidden md:flex gap-6 items-center text-gray-600">
-          <li className="text-pink-500">Home</li>
-          <li>Technologies</li>
-          <li>Projects</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li className="text-pink-500"><a href="#home">Home</a></li>
+          <li><a href="#technologies" className="hover:text-pink-500">Technologies</a></li>
+          <li><a href="#projects" className="hover:text-pink-500">Projects</a></li>
+          <li><a href="#about" className="hover:text-pink-500">About</a></li>
+          <li><a href="#contact" className="hover:text-pink-500">Contact</a></li>
         </ul>
 
         <div className="flex gap-2 md:gap-5 items-center">

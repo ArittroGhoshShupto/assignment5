@@ -19,11 +19,23 @@ const TechCard = ({
   );
 
   const handleSelectTech = () => {
-    if (isSelected) return;
+    if (isSelected) {
+      toast.warn(` ${tech.name} is already in your stack!`, {
+        position: "top-center",
+        autoClose: 2550,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+        transition: Bounce,
+      });
+      return;
+    }
 
     setSelectedTechs([...selectedTechs, tech]);
 
-    toast.success(`${tech.name} added to your stack!`, {
+    toast.success(` ${tech.name} added to your stack!`, {
       position: "top-center",
       autoClose: 2550,
       hideProgressBar: false,
@@ -77,11 +89,10 @@ const TechCard = ({
 
         <button
           onClick={handleSelectTech}
-          disabled={isSelected}
-          className={`w-full py-2.5 rounded-xl text-xs font-semibold transition-all ${
+          className={`w-full py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
             isSelected
-              ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-              : "bg-black text-white hover:bg-gray-800 cursor-pointer shadow-xs"
+              ? "bg-gray-200 text-gray-500 hover:bg-gray-300"
+              : "bg-black text-white hover:bg-gray-800 shadow-xs"
           }`}
         >
           {isSelected ? "✓ Added to Stack" : "Add to Stack"}
